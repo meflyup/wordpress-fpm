@@ -1,0 +1,22 @@
+# redirect everything to the main site
+# we use a separate server statement and NOT an if statement - see http://wiki.nginx.org/IfIsEvil
+server {
+  server_name  _;
+  return 302 $scheme://localhost:8080$request_uri;
+}
+
+server {
+  server_name localhost;
+  root /var/www/html;
+
+  index index.php;
+
+  include global/restrictions.conf;
+
+  # additional rules go here
+
+  # only include one of the files below
+  include global/wordpress.conf;
+  #	include global/wordpress-ms-subdir.conf;
+  #	include global/wordpress-ms-subdomain.conf;
+}

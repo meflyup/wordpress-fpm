@@ -1,0 +1,6 @@
+.DS_Store
+.env
+mysql
+wp-content/uploads
+wp-content/plugins
+dist
