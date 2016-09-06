@@ -13,17 +13,17 @@ A modern WordPress LEMP stack for Docker
 ## Getting Started
 * Run `./start.sh` and fill out your credentials in the `.env` file
 * Run `docker-compose up -d`
+* Web server runs on `localhost:8080`
+* Database runs on `localhost:8081`
 
 ## TODO
-* Use environment variables for database creds
-* Automate creation of .env and salts
 * Add wp-cli
-* Add plugins with wp-cli or composer
+* Track plugins with composer
 * Perform uploads test as shown here: https://codex.wordpress.org/Nginx
-* Include grizzly theme
 * Create a Makefile for tasks (cleanup, etc.)
-* Documentation
 * Deployment and CI (git push triggers post-recieve hook using travis paired with gulp deploy-dev)
+* Include grizzly theme
 * Find solution for database and uplods folder
 * Optimize PHP (Varnish, Redis, Memcached)
 * Create CI tests
+* Considerations for multiple environments
