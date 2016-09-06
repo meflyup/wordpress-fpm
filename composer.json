@@ -8,6 +8,6 @@
     }
   ],
   "require": {
-    "wpackagist-plugin/pods": "*"
+    "wpackagist-plugin/wordpress-seo": "*"
   }
 }

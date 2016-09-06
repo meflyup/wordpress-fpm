@@ -2,6 +2,7 @@
 
 ESC_SEQ="\x1b["
 COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
 COL_RESET=$ESC_SEQ"39;49;00m"
 
 pretty_print() {
@@ -13,19 +14,19 @@ DANGLING=$(docker images -q -f "dangling=true")
 VOLUMES=$(docker volume ls -qf "dangling=true")
 
 if [ -n "$EXITED" ]; then
-  echo "Removing these containers:"
+  pretty_print "$COL_GREEN Removing these containers: $COL_RESET"
   docker rm $EXITED
 else
   pretty_print "$COL_RED No containers to remove. $COL_RESET"
 fi
 if [ -n "$DANGLING" ]; then
-  echo "Removing these images:"
+  pretty_print "$COL_GREEN Removing these images: $COL_RESET"
   docker rmi $DANGLING
 else
   pretty_print "$COL_RED No images to remove. $COL_RESET"
 fi
 if [ -n "$VOLUMES" ]; then
-  echo "Removing these volumes:"
+  pretty_print "$COL_GREEN Removing these volumes: $COL_RESET"
   docker volume rm $VOLUMES
 else
   pretty_print "$COL_RED No volumes to remove. $COL_RESET"
