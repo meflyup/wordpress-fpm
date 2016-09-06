@@ -10,11 +10,12 @@ A modern WordPress LEMP stack for Docker
 * [Docker 1.12.0 or later](https://www.docker.com/products/docker)
 
 ## Getting Started
+* Create a `.env` file
 * Run `docker-compose up -d`
 
 ## TODO
-* Use environment variables for ssmtp.conf
-* Use environment variables for sensitive info (database creds, etc.)
+* Use environment variables for database creds
+* Automate creation of .env and salts
 * Add wp-cli
 * Add plugins with wp-cli or composer
 * Perform uploads test as shown here: https://codex.wordpress.org/Nginx

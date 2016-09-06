@@ -1,8 +1,8 @@
 version: '2'
 services:
   wordpress:
-    build: ./docker
-    env_file: ./docker/.env
+    build: ./build
+    env_file: ./.env
     ports:
       - 8080:80
     volumes:

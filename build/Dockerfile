@@ -10,15 +10,15 @@ RUN apk add --update bash ssmtp supervisor nginx libpng-dev libjpeg-turbo-dev &&
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 RUN { \
-		echo 'opcache.memory_consumption=128'; \
-		echo 'opcache.interned_strings_buffer=8'; \
-		echo 'opcache.max_accelerated_files=4000'; \
-		echo 'opcache.revalidate_freq=60'; \
-		echo 'opcache.fast_shutdown=1'; \
-		echo 'opcache.enable_cli=1'; \
+		echo "opcache.memory_consumption=128"; \
+		echo "opcache.interned_strings_buffer=8"; \
+		echo "opcache.max_accelerated_files=4000"; \
+		echo "opcache.revalidate_freq=60"; \
+		echo "opcache.fast_shutdown=1"; \
+		echo "opcache.enable_cli=1"; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-# set environment variables
+# wp install environment variables
 ENV WP_ROOT /var/www/html
 ENV WP_VERSION 4.6
 ENV WP_SHA1 830962689f350e43cd1a069f3a4f68a44c0339c8
@@ -36,7 +36,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WP_VERSION}.t
 COPY nginx/global /etc/nginx/global
 COPY nginx/default /etc/nginx/sites-available/default
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ssmtp.conf /etc/ssmtp/ssmtp.conf
+COPY docker-entrypoint.sh /usr/local/bin/
 COPY stop-supervisor.sh /usr/local/bin/
 COPY supervisord.conf /etc/supervisord.conf
 COPY wp-config.php $WP_ROOT
@@ -51,5 +51,7 @@ RUN chmod 640 $WP_ROOT/wp-config.php \
     && chown -R www-data:www-data /var/lib/nginx
 
 VOLUME $WP_ROOT
+
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]

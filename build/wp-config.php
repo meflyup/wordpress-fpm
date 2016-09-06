@@ -4,7 +4,7 @@ $table_prefix  = getenv('TABLE_PREFIX') ?: 'wp_';
 
 foreach ($_ENV as $key => $value) {
   $capitalized = strtoupper($key);
-  if (!defined($capitalized)) {
+  if (!defined($capitalized) && !preg_match('/^SMTP_/', $capitalized)) {
     define($capitalized, $value);
   }
 }
