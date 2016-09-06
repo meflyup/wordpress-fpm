@@ -8,9 +8,10 @@ A modern WordPress LEMP stack for Docker
 
 ## Requirements
 * [Docker 1.12.0 or later](https://www.docker.com/products/docker)
+* Start script `./start.sh` requires PHP to be installed locally
 
 ## Getting Started
-* Create a `.env` file
+* Run `./start.sh` and fill out your credentials in the `.env` file
 * Run `docker-compose up -d`
 
 ## TODO
