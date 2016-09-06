@@ -1,0 +1,13 @@
+{
+  "name": "griz/grizzly-theme",
+  "description": "The Grizzly WordPress Starter Theme",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "wpackagist-plugin/pods": "*"
+  }
+}

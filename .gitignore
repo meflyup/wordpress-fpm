@@ -1,6 +1,8 @@
 .DS_Store
 .env
-mysql
-wp-content/uploads
-wp-content/plugins
 dist
+mysql
+vendor
+wp-content/plugins
+wp-content/upgrade
+wp-content/uploads
