@@ -2,6 +2,9 @@
 
 set -e
 
+# chown wp-content folder
+chown -R www-data:www-data /var/www/html/wp-content
+
 # build ssmtp.conf
 echo "root=$SMTP_EMAIL" >> /etc/ssmtp/ssmtp.conf
 echo "mailhub=smtp.gmail.com:465" >> /etc/ssmtp/ssmtp.conf

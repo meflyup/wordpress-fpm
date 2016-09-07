@@ -18,7 +18,7 @@ A modern WordPress LEMP stack for Docker
 * Web server runs on `localhost:8080`
 * Database runs on `localhost:8081`
 * Run `make stop` to stop the containers (runs `docker-compose stop`)
-* Run `make clean` for garbage collection (use with caution, will remove unused images, containers, and volumes)
+* Run `make clean` for docker garbage collection (use with caution, will remove unused containers, volumes, and images)
 
 ## Plugins
 * Plugins should only be installed with composer via [wpackagist](https://wpackagist.org/)
@@ -29,8 +29,7 @@ A modern WordPress LEMP stack for Docker
 * Please create a GitHub issue for bugs and feature requests and be as detailed as possible. Or better yet, send a pull request.
 
 ## TODO
-* Make sure nothing belongs to root that shouldn't
-* Perform uploads test as shown here: https://codex.wordpress.org/Nginx
+* Create Grizzly Version
 * Optimize PHP (Varnish, Redis, Memcached)
 * Considerations for multiple environments
 * Find solution for database and uplods folder

@@ -36,7 +36,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WP_VERSION}.t
 COPY nginx/global /etc/nginx/global
 COPY nginx/default /etc/nginx/sites-available/default
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY entrypoint.sh /usr/local/bin/
 COPY salty.php /usr/src/
 COPY stop-supervisor.sh /usr/local/bin/
 COPY supervisord.conf /etc/supervisord.conf
@@ -53,6 +53,6 @@ RUN chmod 640 $WP_ROOT/wp-config.php \
 
 VOLUME $WP_ROOT
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]
