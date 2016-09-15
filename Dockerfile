@@ -19,9 +19,10 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # wp install environment variables
+# see https://wordpress.org/download/release-archive
 ENV WP_ROOT /var/www/html
-ENV WP_VERSION 4.6
-ENV WP_SHA1 830962689f350e43cd1a069f3a4f68a44c0339c8
+ENV WP_VERSION 4.6.1
+ENV WP_SHA1 027e065d30a64720624a7404a1820e6c6fff1202
 
 # upstream tarballs include ./wordpress/ so this gives us /var/www/html/wordpress
 RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WP_VERSION}.tar.gz \
