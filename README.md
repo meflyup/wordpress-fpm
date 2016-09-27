@@ -1,6 +1,6 @@
 # WordPress FPM
 
-[![GitHub Version](https://img.shields.io/github/release/joshcummingsdesign/wordpress-fpm.svg)](https://github.com/joshcummingsdesign/wordpress-fpm)
+[![semantic versioning](https://img.shields.io/github/release/joshcummingsdesign/wordpress-fpm.svg)](https://github.com/joshcummingsdesign/wordpress-fpm)
 
 A modern WordPress LEMP stack for Docker
 
