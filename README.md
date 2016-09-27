@@ -1,5 +1,7 @@
 # WordPress FPM
 
+![GitHub Version](https://img.shields.io/github/tag/joshcummingsdesign/wordpress-fpm.svg?maxAge=2592000)
+
 A modern WordPress LEMP stack for Docker
 
 * WordPress - 4.6
