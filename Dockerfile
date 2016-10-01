@@ -7,17 +7,6 @@ RUN apk add --update bash ssmtp supervisor nginx libpng-dev libjpeg-turbo-dev &&
     && docker-php-ext-install gd mysqli opcache \
     && mkdir -p /var/log/supervisor
 
-# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php
-# RUN { \
-# 		echo "opcache.memory_consumption=128"; \
-# 		echo "opcache.interned_strings_buffer=8"; \
-# 		echo "opcache.max_accelerated_files=4000"; \
-# 		echo "opcache.revalidate_freq=60"; \
-# 		echo "opcache.fast_shutdown=1"; \
-# 		echo "opcache.enable_cli=1"; \
-# 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-
 # wp install environment variables
 # see https://wordpress.org/download/release-archive
 ENV WP_ROOT /var/www/html
