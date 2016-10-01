@@ -20,7 +20,7 @@ The first part of the tag is the version of WordPress and the second part is the
 version: '2'
 services:
   wordpress:
-    image: jgriz/wordpress-fpm
+    image: jgriz/wpfpm
     env_file: ./.env
     ports:
       - 8080:80
@@ -29,9 +29,7 @@ services:
     links:
       - mysql
   mysql:
-    image: mariadb:10.1.17
-    ports:
-      - 8081:3306
+    image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USER}
