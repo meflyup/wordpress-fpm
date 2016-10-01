@@ -12,7 +12,7 @@ A modern WordPress LEMP stack for Docker
 
 The first part of the tag is the version of WordPress and the second part is the version of PHP-FPM.
 
-* jgriz/wpfpm:4.6.1-7.0.11
+* jgriz/wpfpm:4.6.1-7.0.11 [(Dockerfile)](https://github.com/joshcummingsdesign/wordpress-fpm/blob/4.6.1-7.0.11/Dockerfile)
 
 ## Example docker-compose.yml
 
