@@ -4,10 +4,10 @@
 
 A modern WordPress LEMP stack for Docker
 
-* WordPress - 4.6
+* WordPress - 4.6.1
 * MariaDB - 10.1.17
-* PHP-FPM - 7.0.10
-* NGINX - 1.10.1
+* PHP-FPM - 7.0.11
+* NGINX
 
 ## Example docker-compose.yml
 

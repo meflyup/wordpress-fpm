@@ -1,5 +1,5 @@
 
-FROM php:7.0.10-fpm-alpine
+FROM php:7.0.11-fpm-alpine
 
 # install the PHP extensions we need
 RUN apk add --update bash ssmtp supervisor nginx libpng-dev libjpeg-turbo-dev && rm -rf /var/cache/apk/* \
