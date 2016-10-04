@@ -1,4 +1,3 @@
-
 FROM php:7.0.11-fpm-alpine
 
 # install the PHP extensions we need
