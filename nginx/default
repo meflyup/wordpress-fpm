@@ -2,7 +2,7 @@ server {
   server_name localhost;
   root /var/www/html;
 
-  index index.php;
+  index index.php index.html;
 
   include global/restrictions.conf;
 
