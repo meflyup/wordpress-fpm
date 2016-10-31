@@ -13,7 +13,6 @@ A modern WordPress LEMP stack for Docker
 The first part of the tag is the WordPress version and the second part of the tag is the PHP-FPM version.
 
 * `4.6.1-7.0.12`, `latest` [(Dockerfile)](https://github.com/joshcummingsdesign/wordpress-fpm/blob/4.6.1-7.0.12/Dockerfile)
-* `4.6.1-7.0.11` [(Dockerfile)](https://github.com/joshcummingsdesign/wordpress-fpm/blob/4.6.1-7.0.11/Dockerfile)
 
 ## Example docker-compose.yml
 
