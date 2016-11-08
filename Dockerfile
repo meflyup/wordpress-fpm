@@ -25,6 +25,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WP_VERSION}.t
 COPY nginx/global /etc/nginx/global
 COPY nginx/default /etc/nginx/sites-available/default
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY php/php.ini /usr/local/etc/php/php.ini
 COPY entrypoint.sh /usr/local/bin/
 COPY stop-supervisor.sh /usr/local/bin/
 COPY supervisord.conf /etc/supervisord.conf
