@@ -5,6 +5,9 @@ set -e
 # chown wp-content folder
 chown -R www-data:www-data /var/www/html/wp-content
 
+# set host
+sed -i -e "s/example.com/$NGINX_HOST/g" /etc/nginx/sites-available/default
+
 # build ssmtp.conf
 echo "root=$SMTP_EMAIL" >> /etc/ssmtp/ssmtp.conf
 echo "mailhub=smtp.gmail.com:465" >> /etc/ssmtp/ssmtp.conf
