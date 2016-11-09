@@ -7,6 +7,7 @@ chown -R www-data:www-data /var/www/html/wp-content
 
 # set host
 sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/sites-available/default
+sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/global/wordpress.conf
 
 # build ssmtp.conf
 echo "root=$SMTP_EMAIL" >> /etc/ssmtp/ssmtp.conf
