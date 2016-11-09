@@ -28,8 +28,6 @@ services:
       - ./wp-content:/var/www/html/wp-content
     links:
       - mysql
-    environment:
-      NGINX_HOST: ${SITE_HOST}
   mysql:
     image: mariadb
     environment:
