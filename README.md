@@ -28,8 +28,6 @@ services:
       - ./wp-content:/var/www/html/wp-content
     links:
       - mysql
-    environment:
-      SITE_URL: localhost:8080
   mysql:
     image: mariadb
     environment:
@@ -49,6 +47,9 @@ DB_PASSWORD=[ENTER DB PASSWORD]
 DB_HOST=mysql
 TABLE_PREFIX=wp_
 WP_DEBUG=true
+
+# site host
+SITE_HOST=localhost:8080
 
 # smtp
 SMTP_EMAIL=[ENTER EMAIL ADDRESS]
