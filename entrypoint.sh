@@ -5,7 +5,9 @@ set -e
 # chown wp-content folder
 chown -R www-data:www-data /var/www/html/wp-content
 
-# set host
+# set hostname
+SERVER_NAME=$(echo $SITE_HOST | sed "s/:.*$//")
+sed -i -e "s/localhost/$SERVER_NAME/g" /etc/nginx/sites-available/default
 sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/sites-available/default
 sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/global/wordpress.conf
 
