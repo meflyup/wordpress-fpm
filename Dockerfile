@@ -3,7 +3,7 @@ FROM php:7.0.12-fpm-alpine
 # install the PHP extensions we need
 RUN apk add --update bash sed ssmtp supervisor nginx libpng-dev libjpeg-turbo-dev && rm -rf /var/cache/apk/* \
     && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-    && docker-php-ext-install gd mysqli opcache \
+    && docker-php-ext-install gd mysqli zip \
     && mkdir -p /var/log/supervisor
 
 # wp install environment variables
