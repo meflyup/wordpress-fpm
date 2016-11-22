@@ -18,6 +18,6 @@ server {
 
   # only include one of the files below
   include global/wordpress.conf;
-  #	include global/wordpress-ms-subdir.conf;
-  #	include global/wordpress-ms-subdomain.conf;
+  # include global/wordpress-ms-subdir.conf;
+  # include global/wordpress-ms-subdomain.conf;
 }
