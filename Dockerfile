@@ -1,4 +1,4 @@
-FROM php:7.0.12-fpm-alpine
+FROM php:7.0.13-fpm-alpine
 
 # install the PHP extensions we need
 RUN apk add --update bash sed ssmtp openssl supervisor nginx libpng-dev libjpeg-turbo-dev && rm -rf /var/cache/apk/* \
