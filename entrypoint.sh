@@ -18,7 +18,7 @@ openssl req \
         -days 365 \
         -nodes \
         -x509 \
-        -subj "/C=US/ST=CA/L=San Diego/O=Grizzly/OU=Web Development/CN=$SERVER_NAME" \
+        -subj "/C=US/ST=California/L=San Diego/O=Grizzly/OU=Development/CN=$SERVER_NAME" \
         -keyout /etc/nginx/ssl/nginx.key \
         -out /etc/nginx/ssl/nginx.crt
 
