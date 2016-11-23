@@ -6,9 +6,24 @@ server {
   return 302 $scheme://example.com$request_uri;
 }
 
+# redirect port 80 to port 443
 server {
   server_name localhost;
+  return 301 https://example.com$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  server_name localhost;
   root /var/www/html;
+
+  # indicate locations of SSL key files
+  ssl_certificate /etc/nginx/ssl/nginx.crt;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+  # enable HSTS (the includeSubDomains flag is optional)
+  # this forces SSL on clients that respect it, most modern browsers
+  add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
   index index.php index.html;
 

@@ -11,6 +11,17 @@ sed -i -e "s/localhost/$SERVER_NAME/g" /etc/nginx/sites-available/default
 sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/sites-available/default
 sed -i -e "s/example.com/$SITE_HOST/g" /etc/nginx/global/wordpress.conf
 
+# create self-signed ssl cert
+openssl req \
+        -new \
+        -newkey rsa:4096 \
+        -days 365 \
+        -nodes \
+        -x509 \
+        -subj "/C=US/ST=CA/L=San Diego/O=Grizzly/OU=Web Development/CN=$SERVER_NAME" \
+        -keyout /etc/nginx/ssl/nginx.key \
+        -out /etc/nginx/ssl/nginx.crt
+
 # build ssmtp.conf
 echo "root=$SMTP_EMAIL" >> /etc/ssmtp/ssmtp.conf
 echo "mailhub=smtp.gmail.com:465" >> /etc/ssmtp/ssmtp.conf

@@ -23,7 +23,8 @@ services:
     image: jgriz/wpfpm
     env_file: ./.env
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
     volumes:
       - ./wp-content:/var/www/html/wp-content
     links:
