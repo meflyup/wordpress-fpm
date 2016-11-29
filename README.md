@@ -7,6 +7,7 @@ A modern WordPress LEMP stack for Docker
 * WordPress
 * PHP-FPM 7
 * NGINX
+* Self-Signed SSL Certificate
 
 ## Tags
 
@@ -51,7 +52,7 @@ TABLE_PREFIX=wp_
 WP_DEBUG=true
 
 # site host
-SITE_HOST=localhost:8080
+SITE_HOST=example.com
 
 # smtp
 SMTP_EMAIL=[ENTER EMAIL ADDRESS]
